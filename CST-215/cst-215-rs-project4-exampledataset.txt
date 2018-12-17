@@ -1,0 +1,33 @@
+2
+s0,s1,s2
+a,b
+s2
+s0
+6
+s0 a s1
+s0 b s2
+s1 a s0
+s1 b s0
+s2 a s0
+s2 b s0
+1 2
+aaaab
+aaa
+aaaa
+(aa|ab)*b
+s0,s1
+x,y,z
+s1
+s0
+5
+s0 x s1
+s0 y s1
+s0 z s0
+s1 y s1
+s1 z s0
+2 2
+x
+xyzxy
+yz
+zzzyyyzzx
+(x|y|z)*(x|y)

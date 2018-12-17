@@ -1,0 +1,40 @@
+	.text
+
+	.globl main
+main:
+	#print msg to user
+	li	$v0,4
+	la	$a0, msg1
+	syscall
+	
+	#get integer from user
+	li	$v0,5
+	syscall
+	move 	$t0,$v0
+
+	#initialize register
+	li	$t1, 0
+	li	$t2, 0
+
+	#main loop
+loop:	addi	$t1, $t1, 1 
+	add	$t2, $t2, $t1
+	beq	$t0, $t1, exit
+	j	loop
+
+	# exit loop - print msg back to user
+exit:	li	$v0, 4
+	la	$a0, msg2
+	syscall
+
+	#print sum
+	li	$v0,1
+	move	$a0, $t2
+	syscall
+
+	#print newline
+	li	$v0,4
+	la	$a0, lf
+	syscall
+	li 	$v0, 10
+	syscall
